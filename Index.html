@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cofferica — кофейня</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+     <img class="logo-img" src="logo.jpg" alt="Coferica logo">
+      <h1>Cofferica</h1>
+      <p>Кофе сделанное с любовью!</p>
+    </header>
+
+    <!-- Оплата -->
+<section class="card-info">
+  <p>Для оплаты переведите на карту:</p>
+  <div id="cardNumber">4441 1111 5460 3280</div>
+  <p id="cardName">LIUBOV YUGOVA</p>
+  <div class="card-copy" id="copyBox">
+    <button onclick="copyCard()">Скопировать</button>
+    <div class="thanks">Спасибо за покупку ☕</div>
+  </div>
+</section>
+
+<script>
+  function copyCard() {
+    const number = document.getElementById("cardNumber").textContent;
+    navigator.clipboard.writeText(number).then(() => {
+      const box = document.getElementById("copyBox");
+      box.classList.add("show");
+      setTimeout(() => box.classList.remove("show"), 2500);
+    });
+  }
+</script>
+
+
+    <!-- О нас -->
+    <section>
+      <h2>О нас</h2>
+      <p>Cofferica — это место, где аромат кофе сочетается с уютной атмосферой и прекрастными воспоминаниями. Мы предлагаем качественный кофе и душевное пространство для работы и отдыха.</p>
+      <div class="image-section"></div>
+    </section>
+
+    <!-- Локация -->
+    <section>
+      <h2>Мы находимся:</h2>
+      <p>ул. Леонтовича 2а</p>
+      <p>Ежедневно: 08:00 — 18:00</p>
+      <p>Телефон: +380 93-846-2584</p>
+      <div class="image-section"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2025 Cofferica. Все права защищены.
+    </footer>
+  </div>
+
+  <script>
+    function copyCard() {
+      const number = document.getElementById("cardNumber").textContent;
+      navigator.clipboard.writeText(number).then(() => {
+        const box = document.getElementById("copyBox");
+        box.classList.add("show");
+        setTimeout(() => box.classList.remove("show"), 2500);
+      });
+    }
+  </script>
+</body>
+</html>
